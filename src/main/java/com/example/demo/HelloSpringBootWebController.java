@@ -9,14 +9,14 @@ import org.springframework.web.servlet.ModelAndView;
 public class HelloSpringBootWebController {
     @RequestMapping(value="/", method=RequestMethod.GET)
     public ModelAndView index(ModelAndView mv) {
-        mv.setViewName("index");
+        mv.setViewName("login");
         return mv;
     }
  
     @RequestMapping(value="/result", method=RequestMethod.POST)
-    public ModelAndView send(@RequestParam("inputvalue")String inputvalue, ModelAndView mv) {
+    public ModelAndView send(@RequestParam("username")String username, ModelAndView mv) {
         mv.setViewName("result");
-        mv.addObject("message", inputvalue);
+        mv.addObject("message", username);
         return mv;
     }
 }
